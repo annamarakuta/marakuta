@@ -1,0 +1,20 @@
+<div class="container">
+  <article>
+    <ul>
+	  <li>
+	    Место: {{ post.location }}
+	  </li>
+	  <li>
+	    Дата: {{ post.date }}
+	  </li>
+	  <li>
+	    Категория: <a href="{% url 'blog:category_posts' post.category %}">{{ post.category }}</a>
+	  </li>
+	</ul>
+    {% if trancated == "TRUE" %}
+	  <p>{{ post.text|truncatewords:10 }}</p>
+    {% else %}
+	  <p>{{ post.text }}</p>
+	{% endif %}
+  </article>
+</div>

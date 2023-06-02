@@ -1,0 +1,8 @@
+<!DOCTYPE html> <!-- Используется html 5 версии -->
+{% extends 'base.html' %}
+{% block title_name %}
+Пост {{ post.id }}
+{% endblock %}
+{% block content %}
+{% include 'blog/article.html' with trancated="FALSE" post=post %}
+{% endblock %}
